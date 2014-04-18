@@ -7,7 +7,7 @@ davidad: "No problem. I'm prepared for this."
 
 ### Requirements
 
-* `nginx`: I follow [these instructions](https://github.com/davidad/openresty-heroku-example/blob/master/Building_OpenResty_locally.md) to get a local build of `nginx` available
+* `nginx`: I follow [these instructions](https://github.com/davidad/openresty-heroku-example/blob/master/Building_OpenResty_locally.md) to get a local build of `nginx` from the [OpenResty](http://openresty.org) distribution, but your package manager's `nginx` binary should be just fine for our purposes here
 * `redis`: usually `[package-manager] install redis`
 * `hiredis`: usually `[package-manager] install hiredis`; make sure that the libs are actually available (I did `sudo ln -sf /usr/local/opt/hiredis/lib/* /usr/lib` and `sudo ln -sf /usr/local/opt/hiredis/include/* /usr/include`)
 
