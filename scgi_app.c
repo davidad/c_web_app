@@ -20,8 +20,9 @@ int main(void)
       uint64_t count = ((redisReply*)redisCommand(c,"INCR counter"))->integer;
       char* resp;
       asprintf(&resp,"HTTP/1.1 200 OK\r\n"
+                     "Content-type: text/html\r\n"
                      "\r\n"
-                     "Oh, hi! You are visitor number %llu.\r\n"
+                     "<h1>Oh, hi!</h1> You are visitor number %llu.\r\n"
           ,count);
       scgi_write(req, resp);
       free(resp);
