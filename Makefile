@@ -1,7 +1,9 @@
 APP ?= scgi_app
+CLIBS ?= scgilib.c mmap_util.c
+CHDRS ?= scgilib.h mmap_util.h
 
-$(APP): $(APP).c scgilib.c scgilib.h
-	gcc -O3 -lhiredis  -o $@  $(filter %.c,$^)
+$(APP): $(APP).c $(CLIBS) $(CHDRS)
+	gcc -O3 -lhiredis  -o $@  $< $(CLIBS)
 
 .PHONY: run resetdb kill-redis kill-nginx shutdown clean
 
